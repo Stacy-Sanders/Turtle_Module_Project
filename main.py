@@ -1,5 +1,7 @@
 from turtle import Turtle, Screen, colormode
 from random import choice, randint
+# import turtle as t
+# tator = t.Turtle()
 
 tator = Turtle()
 tator.shape("turtle")
@@ -8,7 +10,7 @@ no_sides = 0
 
 colors = ["red", "blue", "green", "yellow", "black", "purple", "orange", "NavyBlue", "LightSlateBlue", "brown",
           "orchid", "PaleGreen", "firebrick", "honeydew4", "gold", "GhostWhite", "ForestGreen", "blue4", "aquamarine"]
-directions = [0, 90, 180, 270]
+directions = [0, 90, 180, 270]  # set heading ie [east, north, west, south]
 
 
 def square(turtle):
@@ -20,11 +22,6 @@ def square(turtle):
 # square(tator)
 
 # tator.left(90)
-# import heroes
-# print(heroes.gen())  # Weapon Omega, Battle, Anne Marie Hoag?
-
-# import villains
-# print(villains.gen())  # Roxy Rocket! pretty cool
 
 
 def dashed_line(turtle):
@@ -62,6 +59,7 @@ def random_walk(turtle):
 
 
 # random_walk(tator)
+# Turtle shows up better at tend - change to white
 # tator.color("white")
 
 colormode(255)
@@ -84,6 +82,23 @@ def random_walk2(turtle):
         turtle.setheading(choice(directions))
 
 
-random_walk2(tator)
+# random_walk2(tator)
+
+
+def spirograph(turtle):
+    pass
+
+
+def spiral(turtle):
+    circ = 360 / 8 + 1
+    start = 8
+    turtle.speed("fastest")
+    for i in range(int(circ)):
+        turtle.color(random_color())
+        turtle.circle(50)
+        turtle.setheading(start * i)
+
+
+spiral(tator)
 screen = Screen()
 screen.exitonclick()
