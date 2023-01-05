@@ -89,16 +89,16 @@ def spirograph(turtle):
     pass
 
 
-def spiral(turtle):
-    circ = 360 / 8 + 1
-    start = 8
+def spiral(turtle, size_of_gap):
+    circ = 360 / size_of_gap
     turtle.speed("fastest")
     for i in range(int(circ)):
         turtle.color(random_color())
         turtle.circle(50)
-        turtle.setheading(start * i)
+        turtle.setheading(turtle.heading() + size_of_gap)
 
 
-spiral(tator)
+spiral(tator, 10)
+spiral(tator, 5)
 screen = Screen()
 screen.exitonclick()
